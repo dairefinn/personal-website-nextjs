@@ -1,0 +1,90 @@
+@use '@/app/scss/theme';
+@use '@/app/scss/breakpoints';
+
+.container-component-career-history {
+    .area-career-entries-list {
+        display: flex;
+        flex-direction: column;
+        gap: 64px;
+
+        .display-career-item {
+            display: grid;
+            grid-template-columns: 24px 1fr;
+            gap: 16px;
+
+            .display-career-item-timeline {
+                position: relative;
+
+                .timeline-circle {
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background-color: theme.$white-300;
+                    margin: 12px 8px;
+                }
+
+                .timeline-line {
+                    display: none;
+                    width: 2px;
+                    background-color: theme.$white-300;
+                    position: absolute;
+                    left: calc(24px - 50%);
+                    top: 20px;
+                    bottom: -78px;
+                    transform: translateX(-50%);
+                }
+            }
+
+            .display-career-item-date-desktop {
+                font-size: 0.8rem;
+                color: theme.$white-300;
+                height: 2rem;
+                align-items: center;
+                text-wrap: nowrap;
+                font-size: 0.8rem;
+                color: theme.$white-300;
+                height: 2rem;
+                justify-content: flex-end;
+                align-items: center;
+                text-wrap: nowrap;
+                margin-right: -16px;
+                margin-top: -1px;
+                display: none;
+            }
+
+            .display-career-item-date-mobile {
+                display: flex;
+            }
+
+            &:not(:last-child) {
+                .display-career-item-timeline {
+                    .timeline-line {
+                        display: block;
+                    }
+                }
+            }
+
+            @include breakpoints.md {
+                grid-template-columns: 50px 24px 1fr;
+
+                .display-career-item-date-desktop {
+                    display: flex;
+                }
+            }
+        }
+    }
+
+    &.career-history-shortened {
+        .area-career-entries-list {
+            gap: 16px;
+
+            .display-career-item {
+                .display-career-item-timeline {
+                    .timeline-line {
+                        bottom: -32px;
+                    }
+                }
+            }
+        }
+    }
+}

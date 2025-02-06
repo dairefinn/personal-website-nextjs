@@ -1,0 +1,68 @@
+@use '@/app/scss/theme';
+@use '@/app/scss/breakpoints';
+@use '@/app/scss/headings';
+@use '@/app/scss/images';
+@use '@/app/scss/alignment';
+@use '@/app/scss/text';
+@use '@/app/scss/printing';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: theme.$gray-500;
+  color: theme.$white-200;
+  font-family: Segoe UI,Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
+  position: relative;
+
+  a {
+    color: theme.$white-300;
+  }
+
+  .clickable {
+    cursor: pointer;
+  }
+}
+
+.app-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column-reverse;
+
+    .container-sidebar {
+        position: sticky;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .container-page {
+        flex-grow: 1;
+    }
+
+    @include breakpoints.md {
+        flex-direction: row;
+
+        .container-sidebar {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+        }
+    }
+
+    @media print {
+        display: block;
+
+        .container-sidebar {
+            display: none;
+        }
+
+        .container-page {
+            padding-top: 32px;
+            padding-bottom: 32px;
+        }
+    }
+}

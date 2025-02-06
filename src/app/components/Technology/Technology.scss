@@ -1,0 +1,38 @@
+@use '@/app/scss/theme';
+@use '@/app/scss/breakpoints';
+
+.container-component-technology {    
+    .display-technology-item-details {
+        display: flex;
+        flex-direction: column;
+
+        .display-technology-item-title {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+
+        .display-technology-item-experience {
+            display: flex;
+            flex-direction: column;
+
+            .display-experience-item {
+                .display-experience-title {
+                    font-size: 0.8rem;
+                    color: theme.$white-300;
+                    margin-top: 16px;
+                    display: flex;
+                    gap: 0.8em;
+                    align-items: center;
+                    line-height: 1em;
+                }
+
+                p {
+                    margin-top: 0.5rem;
+                }
+            }
+        }
+    }
+}

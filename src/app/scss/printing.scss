@@ -1,0 +1,9 @@
+.print-hidden {
+    @media print {
+        display: none;
+    }
+}
+
+.print-whole {
+    break-inside: avoid;
+}

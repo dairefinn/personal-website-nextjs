@@ -1,0 +1,17 @@
+.container-component-page-wrapper {
+    padding: 32px;
+    text-align: center;
+
+    .page-wrapper-inner {
+            display: inline-block;
+            text-align: left;
+            max-width: 700px;
+            margin-bottom: 64px;
+    }
+
+    @media print {
+        .page-wrapper-inner {
+            margin-bottom: 0;
+        }
+    }
+}

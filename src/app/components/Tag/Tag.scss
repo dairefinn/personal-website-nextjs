@@ -1,0 +1,11 @@
+@use '@/app/scss/theme';
+
+.container-component-tag {
+    border: 1px solid  theme.$gray-300;
+    padding: 8px;
+    border-radius: 4px;
+    line-height: 0.5rem;
+    font-size: 0.5rem;
+    vertical-align: middle;
+    font-weight: 600;
+}

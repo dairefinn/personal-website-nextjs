@@ -1,0 +1,66 @@
+@use '@/app/scss/theme';
+@use '@/app/scss/breakpoints';
+
+li {
+    list-style-type: none;
+
+    a {
+        padding: 16px;
+        font-size: .8rem;
+        text-decoration: none;
+        cursor: pointer;
+        font-weight: 600;
+        display: flex;
+        flex-direction: column;
+        gap: .75rem;
+        align-items: center;
+        justify-content: center;
+
+        .navigation-link-title {
+            display: none;
+        }
+        
+        &:hover {
+            background-color: theme.$gray-300;
+        }
+        
+        &.active {
+            background-color: theme.$gray-600;
+        }
+
+        & > .navigation-link-title {
+            line-height: .8rem;
+        }
+
+        .sidebar-type-icon {
+            display: none;
+        }
+    }
+
+    @include breakpoints.xs {
+        a {
+            .navigation-link-title {
+                display: block;
+            }
+        }
+    }
+
+    @include breakpoints.md {        
+        margin-bottom: 8px;
+
+        a {
+            padding: 8px 16px;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            border-radius: 8px;
+
+            .navigation-link-title {
+                display: block;
+            }
+            
+            .sidebar-type-icon {
+                display: inline;
+            }
+        }
+    }
+}

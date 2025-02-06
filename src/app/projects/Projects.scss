@@ -1,0 +1,81 @@
+@use '@/app/scss/theme';
+@use '@/app/scss/breakpoints';
+
+.container-component-project {
+    .area-project-entries-list {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        .display-project-item {
+
+            .display-project-item-date {
+                font-size: 0.8rem;
+                color: theme.$white-300;
+            }
+    
+            .display-project-item-details {
+                .display-project-item-title {
+                    display: flex;
+                    gap: 8px;
+                    align-items: center;
+                    font-weight: 600;
+                    font-size: 1.25rem;
+                }
+
+                .display-project-item-status {
+                    display: flex;
+                    gap: 8px;
+                    align-items: center;
+                    color: theme.$white-300;
+                    font-size: 0.8rem;
+                    padding: 4px 8px;
+                    border-radius: 8px;
+                    background-color: theme.$white-400;
+                    color: theme.$gray-400;
+                    font-weight: 700;
+
+                    &.display-project-item-status-completed {
+                        background-color: theme.$status-blue;
+                        color: #000000;
+                    }
+
+                    &.display-project-item-status-wip {
+                        background-color: theme.$status-green;
+                    }
+
+                    &.display-project-item-status-inactive {
+                        background-color: theme.$status-red;
+                    }
+                }
+    
+                .display-project-item-url {
+                    display: flex;
+                    gap: 8px;
+                    align-items: center;
+                    color: theme.$white-300;
+                }
+
+                .display-project-item-tags {
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 16px;
+                    color: theme.$white-300;
+                    cursor: default;
+                    font-weight: 600;
+                }
+            }
+
+            @include breakpoints.md {
+                display: grid;
+                gap: 32px;
+                grid-template-columns: 90px 1fr;
+
+                .display-project-item-date {
+                    text-align: right;
+                }
+            }
+        }
+    }
+}

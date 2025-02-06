@@ -1,0 +1,76 @@
+@use '@/app/scss/theme';
+@use '@/app/scss/breakpoints';
+
+.container-component-sidebar {
+    background-color: theme.$gray-400;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid theme.$gray-200;
+
+    .area-branding {
+        display: none;
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    .navigation-heading {
+        font-size: .7rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: theme.$white-300;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        display: none;
+    }
+
+    ul {
+        flex-direction: row;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        flex-wrap: nowrap;
+        user-select: none;
+
+        &.area-external-links {
+            display: none;
+        }
+
+        &.area-download-links {
+            display: none;
+        }
+        
+        & > * {
+            flex-grow: 1;
+        }
+    }
+
+    @include breakpoints.md {
+        border-top: none;
+        border-right: 1px solid theme.$gray-200;
+        width: 200px;
+        height: 100%;
+        padding: 16px;
+
+        .area-branding {
+            display: block;
+        }
+
+        ul {
+            flex-direction: column;
+            display: block;
+
+            &.area-external-links {
+                display: block;
+            }
+
+            &.area-download-links {
+                display: block;
+            }
+        }
+
+        .navigation-heading {
+            display: block;
+        }
+    }
+}

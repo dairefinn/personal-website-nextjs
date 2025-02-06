@@ -1,0 +1,10 @@
+@use '@/app/scss/theme';
+@use '@/app/scss/breakpoints';
+
+.container-component-navigation-tabs {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    user-select: none;
+    color: theme.$white-300;
+}

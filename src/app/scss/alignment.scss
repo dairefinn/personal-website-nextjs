@@ -1,0 +1,56 @@
+@use 'breakpoints';
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-nowrap {
+    white-space: nowrap;
+}
+
+.side-by-side {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+
+    &.side-by-side-large-right {
+        @include breakpoints.md {
+            grid-template-columns: 1fr 2fr;
+        }
+    }
+
+    
+    &.side-by-side-large-left {
+        flex-direction: row-reverse;
+
+        @include breakpoints.md {
+            grid-template-columns: 2fr 1fr;
+        }
+    }
+
+    &.side-by-side-xlarge-right {
+        @include breakpoints.md {
+            grid-template-columns: 1fr 3fr;
+        }
+    }
+
+    &.side-by-side-xlarge-left {
+        flex-direction: row-reverse;
+
+        @include breakpoints.md {
+            grid-template-columns: 3fr 1fr;
+        }
+    }
+
+    @include breakpoints.md {
+        grid-template-columns: 1fr 1fr;
+    }
+}

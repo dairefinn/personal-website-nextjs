@@ -1,0 +1,20 @@
+.container-component-homepage {
+    .homepage-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    
+        .area-introduction {
+            .headshot-container {
+                max-width: 500px;
+                justify-self: center;
+            }
+        }
+    
+        .area-music {
+            .iframe-spotify-playlist {
+                border-radius: 8px;
+            }
+        }
+    }
+}

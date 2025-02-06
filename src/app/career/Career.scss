@@ -1,0 +1,24 @@
+@use '@/app/scss/theme';
+@use '@/app/scss/breakpoints';
+
+.container-component-career {
+    .area-csv-download {
+        text-align: center;
+        padding-bottom: 32px;
+    }
+
+    .area-navigation-tabs {
+        .area-navigation-tabs-inner {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 32px;
+            width: 100%;
+        }
+    }
+
+    @include breakpoints.md {
+        .area-csv-download {
+            display: none;
+        }
+    }
+}

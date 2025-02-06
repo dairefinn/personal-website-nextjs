@@ -1,0 +1,26 @@
+@use '@/app/scss/theme';
+
+.container-component-button {
+    font-size: .8rem;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    display: inline-block;
+    background-color: theme.$gray-500;
+
+    &:hover {
+        background-color: theme.$gray-300;
+    }
+
+    &.active {
+        background-color: theme.$gray-600;
+        cursor: default;
+    }
+
+    &.disabled {
+        background-color: theme.$gray-400;
+        color: theme.$gray-100;
+        cursor: default;
+    }
+}
